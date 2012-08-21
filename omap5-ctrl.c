@@ -3,7 +3,7 @@
  * mpsse mode for controlling power on/off/reset and checking status of
  * LEDS on omap5432 based PandaBoard5
  *
- * Author: David Anders <x0132446@ti.com
+ * Author: David Anders <x0132446@ti.com>
  * Copyright (C) 2012 David Anders
  * Copyright (C) 2012 Texas Instruments
  *
@@ -39,7 +39,7 @@ int set_power_button(struct ftdi_context ftdic, int level)
 
 	f = ftdi_write_data(&ftdic, buf, sizeof(buf));
 	if (f < 0) {
-		fprintf(stderr, "write failed on channel 2 for "
+		fprintf(stderr, "write failed on channel 2 for ");
 		fprintf(stderr, " 0x%x, error %d (%s)\n", buf[0], f,
 			ftdi_get_error_string(&ftdic));
 		return f;
