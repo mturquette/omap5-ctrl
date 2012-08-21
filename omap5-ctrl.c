@@ -28,7 +28,7 @@
 #define UPPER_BANK	0x83
 #define GPIO_DIR	0x20
 #define GPIO_PWR_HI	0x20
-#define GPIO_PWE_LO	0x00
+#define GPIO_PWR_LO	0x00
 
 int set_power_button(struct ftdi_context ftdic, int level)
 {
