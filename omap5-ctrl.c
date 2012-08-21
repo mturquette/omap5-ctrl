@@ -30,7 +30,7 @@
 #define GPIO_PWR_HI	0x20
 #define GPIO_PWR_LO	0x00
 
-int set_power_button(struct ftdi_context ftdic, int level)
+static int set_power_button(struct ftdi_context ftdic, int level)
 {
 	unsigned char buf[3];
 	int f;
@@ -54,7 +54,7 @@ int set_power_button(struct ftdi_context ftdic, int level)
 	return 0;
 }
 
-int check_pwr_led(struct ftdi_context ftdic, int expect)
+static int check_pwr_led(struct ftdi_context ftdic, int expect)
 {
 	unsigned char buf[3], buf_return[3];
 	int f, i;
@@ -73,7 +73,7 @@ int check_pwr_led(struct ftdi_context ftdic, int expect)
 
 }
 
-int power_ctrl(struct ftdi_context ftdic, int status)
+static int power_ctrl(struct ftdi_context ftdic, int status)
 {
 
 	set_power_button(ftdic, 1);
@@ -96,7 +96,7 @@ int power_ctrl(struct ftdi_context ftdic, int status)
 	return 0;
 }
 
-void show_help(void)
+static void show_help(void)
 {
 	printf("Usage: omap5-ctrl -p value -r -l\n");
 	printf("Where -p value   = power the board 0 for off 1 for on\n");
