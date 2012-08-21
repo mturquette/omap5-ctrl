@@ -1,13 +1,33 @@
 omap5-ctrl
 
-require libftdi be installed.
+mpsse mode for controlling power on/off/reset and checking status of
+LEDS on omap5432 based PandaBoard5
+
+Author: David Anders <x0132446@ti.com>
+Copyright (C) 2012 David Anders
+Copyright (C) 2012 Texas Instruments
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License version 2 as published by
+the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+more details.
+
+You should have received a copy of the GNU General Public License along with
+this program.  If not, see <http://www.gnu.org/licenses/>.
+
+requires libftdi be installed:
+
+http://www.intra2net.com/en/developer/libftdi/
 
 for ubuntu use:
 sudo apt-get install libftdi-dev
 
 
 examples:
-
 
 power off board
 omap5-ctrl$ sudo ./omap5-ctrl -p 0
