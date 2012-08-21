@@ -1,0 +1,22 @@
+omap5-ctrl
+
+require libftdi be installed.
+
+for ubuntu use:
+sudo apt-get install libftdi-dev
+
+
+examples:
+
+
+power off board
+omap5-ctrl$ sudo ./omap5-ctrl -p 0
+[sudo] password for danders: 
+waiting for power off confirmation...
+done!
+
+power on board
+omap5-ctrl$ sudo ./omap5-ctrl -p 1
+waiting for power on confirmation...
+done!
+
