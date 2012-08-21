@@ -101,7 +101,6 @@ static void show_help(void)
 	printf("Usage: omap5-ctrl -p value -r -l\n");
 	printf("Where -p value   = power the board 0 for off 1 for on\n");
 	printf("      -r         = perform a board reset\n");
-	printf("      -l         = display the status of the onboard leds\n");
 }
 
 
