@@ -64,10 +64,8 @@ int check_pwr_led(struct ftdi_context ftdic, int expect)
 		f = ftdi_write_data(&ftdic, buf, 1);
 		f = ftdi_read_data(&ftdic, buf_return, 1);
 		buf_return[0] &= (1<<1);
-		if (buf_return[0] == expect) {
-			printf("power led confirmed status = %d!\n", expect);
+		if (buf_return[0] == expect)
 			break;
-		}
 		sleep(1);
 	}
 
@@ -83,12 +81,16 @@ int power_ctrl(struct ftdi_context ftdic, int status)
 	set_power_button(ftdic, 0);
 
 	if (status) {
+		printf("waiting for power on confirmation...\n");
 		sleep(1);
 		set_power_button(ftdic, 1);
 		check_pwr_led(ftdic, 0x00);
+		printf("done!\n");
 	} else {
+		printf("waiting for power off confirmation...\n");
 		check_pwr_led(ftdic, 0x02);
 		set_power_button(ftdic, 1);
+		printf("done!\n");
 	}
 
 	return 0;
